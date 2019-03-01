@@ -1,0 +1,3 @@
+/home/saikat/ArucoTags/CMakeFiles/rebuild_cache.dir
+/home/saikat/ArucoTags/CMakeFiles/edit_cache.dir
+/home/saikat/ArucoTags/CMakeFiles/aruco_simple.dir

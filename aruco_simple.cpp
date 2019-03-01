@@ -9,11 +9,14 @@ using namespace std;
 using namespace cv;
 using namespace aruco;
 
-int main()
+int main(int argc,char const *argv[])
   {
-    Mat InImage=imread("arucoTable.jpg",1);
+    Mat InImage;//=imread(argv[1]);
+    namedWindow("in",0);
+    VideoCapture vid(1);
     MarkerDetector MDetector;
-    
+    while(1){
+    vid >> InImage;
     vector<Marker> Markers = MDetector.detect(InImage);
     
     for(unsigned int i=0;i<Markers.size();i++)
@@ -21,8 +24,8 @@ int main()
       cout<<Markers[i]<<endl;
       Markers[i].draw(InImage,Scalar(0,255,0),2);
     }
-    namedWindow("in",0);
     imshow("in",InImage);
-    waitKey(0);
+    if(waitKey(30)==27)break;
+}
     
   }
